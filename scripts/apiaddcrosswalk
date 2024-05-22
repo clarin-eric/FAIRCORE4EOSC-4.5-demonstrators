@@ -1,0 +1,20 @@
+#!/bin/sh
+echo $1 $2
+NAME=$1
+FILE=$2
+if [ -r "$FILE" ]
+then SOURCEEXP="file=@$FILE"
+elif [ `echo $FILE | grep '^http'` ]
+then SOURCEEXP="contentURL=$FILE"
+else SOURCEEXP="ILLEGAL SOURCE"
+echo "No input found: $2"
+exit 0
+fi
+
+#echo curl -Ss -X PUT 'https://mscr-test.rahtiapp.fi/datamodel-api/v2/schemaFull' --header 'Accept: */*' --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwYjNiNjZmZS1iMWY4LTQ1YTctYmVjNi02YmQ3ZjAxM2I5OTciLCJleHAiOjE3MjgwNDc2NzQsImlhdCI6MTcxMjIzNjQ3NH0.CWHiJhpY13raAnWo2ZV8TpJl6pD-DAugYBg-JqgD_jVID8IGlNfvjPZNl3EUQ6ro-lRnRwEmgL6TYBBS3pHcmw' --form metadata="{ \"status\": \"DRAFT\", \"state\": \"DRAFT\", \"visibility\": \"PUBLIC\", \"namespace\": \"http://test.com\", \"versionLabel\": \"1\", \"label\": { \"en\": \"$NAME\" }, \"description\": { \"en\": \"string\" } , \"languages\": [\"en\"], \"format\": \"JSON\" }" --form $SOURCEEXP 
+curl -Ss -X PUT 'https://mscr-test.rahtiapp.fi/datamodel-api/v2/schemaFull' --header 'Accept: */*' --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwYjNiNjZmZS1iMWY4LTQ1YTctYmVjNi02YmQ3ZjAxM2I5OTciLCJleHAiOjE3MjgwNDc2NzQsImlhdCI6MTcxMjIzNjQ3NH0.CWHiJhpY13raAnWo2ZV8TpJl6pD-DAugYBg-JqgD_jVID8IGlNfvjPZNl3EUQ6ro-lRnRwEmgL6TYBBS3pHcmw' --form metadata="{ \"status\": \"DRAFT\", \"state\": \"DRAFT\", \"visibility\": \"PUBLIC\", \"namespace\": \"http://test.com\", \"versionLabel\": \"1\", \"label\": { \"en\": \"$NAME\" }, \"description\": { \"en\": \"string\" } , \"languages\": [\"en\"], \"format\": \"XSL\" }" --form $SOURCEEXP | jq
+
+#'contentURL="https://gist.githubusercontent.com/iwasdavid/2b65c4259c284a3c910266c2f5a1e308/raw/90bf6972288545c2b329446c90820c79fecf3d73/sample.xsd"'
+
+
+#'contentURL="http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml-gbif-profile.xsd"'

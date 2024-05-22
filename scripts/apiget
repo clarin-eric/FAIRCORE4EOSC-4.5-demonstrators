@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#curl -Ss -X GET https://mscr-test.rahtiapp.fi/datamodel-api/v2/frontend/mscrSearchPersonalContent --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwYjNiNjZmZS1iMWY4LTQ1YTctYmVjNi02YmQ3ZjAxM2I5OTciLCJleHAiOjE3MjgwNDc2NzQsImlhdCI6MTcxMjIzNjQ3NH0.CWHiJhpY13raAnWo2ZV8TpJl6pD-DAugYBg-JqgD_jVID8IGlNfvjPZNl3EUQ6ro-lRnRwEmgL6TYBBS3pHcmw' | jq '.hits.hits[] | ._source.label.en, ._source.id'
+curl -Ss -X GET https://mscr-test.rahtiapp.fi/datamodel-api/v2/frontend/mscrSearchPersonalContent --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwYjNiNjZmZS1iMWY4LTQ1YTctYmVjNi02YmQ3ZjAxM2I5OTciLCJleHAiOjE3MjgwNDc2NzQsImlhdCI6MTcxMjIzNjQ3NH0.CWHiJhpY13raAnWo2ZV8TpJl6pD-DAugYBg-JqgD_jVID8IGlNfvjPZNl3EUQ6ro-lRnRwEmgL6TYBBS3pHcmw' | jq 

@@ -1,0 +1,5 @@
+./apiaddschema BIDS2 JSONSCHEMA https://raw.githubusercontent.com/bids-standard/bids-stats-model-schema/master/schema.json
+./apiaddschema Yoda JSONSCHEMA https://yoda.uu.nl/schemas/default-0/metadata.json
+./apiaddschema Dataverse JSONSCHEMA ../Schema/Dataverse/demo-10.5072-FK2-PPORT-generated-schema.json
+./apiaddschema LR-Switchboard JSONSCHEMA ../Schema/LRSWitchboard/spec-v2.schema.json
+echo "done\n"
