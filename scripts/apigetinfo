@@ -1,0 +1,4 @@
+#!/bin/sh
+BT=`cat token.txt`
+
+curl -Ss -X GET https://mscr-test.rahtiapp.fi/datamodel-api/v2/frontend/mscrSearchPersonalContent --header 'Authorization: Bearer '$BT | jq -r '.hits.hits[]._source | [.id, .label.en, .status, .type ] |@tsv'
