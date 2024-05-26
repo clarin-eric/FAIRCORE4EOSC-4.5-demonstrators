@@ -39,14 +39,23 @@ LR-Switchboard JSONSCHEMA ../Schema/LRSWitchboard/spec-v2.schema.json
 
 
 #MPI crosswalks
-CMDI2OLAC XSL https://github.com/TheLanguageArchive/metadata_xslts/blob/main/cmd2dc-olac/cmd2olac.xsl
-CMDI2DC XSL https://github.com/TheLanguageArchive/metadata_xslts/blob/main/cmd2dc-olac/cmd2dc.xsl
+#CMDI2OLAC XSL https://raw.githubusercontent.com/TheLanguageArchive/metadata_xslts/main/cmd2dc-olac/cmd2olac.xsl
+#CMDI2DC XSL https://raw.githubusercontent.com/TheLanguageArchive/metadata_xslts/main/cmd2dc-olac/cmd2dc.xsl
+# at this moment MSCR does not support crosswalk fetch via URI, so download first
+CMDI2OLAC XSL ../Schema/MPI-crosswalks/cmd2olac.xsl
+CMDI2DC XSL ../Schema/MPI-crosswalks/cmd2dc.xsl
 
 
 # UFAL crosswalks
-DIM2DataCite XSL https://github.com/ufal/clarin-dspace/blob/clarin/dspace/config/crosswalks/DIM2DataCite.xsl
-DIM2EZID XSL https://github.com/ufal/clarin-dspace/blob/clarin/dspace/config/crosswalks/DIM2EZID.xsl
-DIM2MARC21slim XSL https://github.com/ufal/clarin-dspace/blob/clarin/dspace/config/crosswalks/DIM2MARC21slim.xsl
-MODS-submission XSL https://github.com/ufal/clarin-dspace/blob/clarin/dspace/config/crosswalks/mods-submission.xsl
-DIM2DC-example XSL https://github.com/ufal/clarin-dspace/blob/clarin/dspace/config/crosswalks/sample-crosswalk-DIM2DC.xsl
+#DIM2DataCite XSL https://raw.githubusercontent.com/ufal/clarin-dspace/clarin/dspace/config/crosswalks/DIM2DataCite.xsl
+#DIM2EZID XSL https://raw.githubusercontent.com/ufal/clarin-dspace/clarin/dspace/config/crosswalks/DIM2EZID.xsl
+#DIM2MARC21slim XSL https://raw.githubusercontent.com/ufal/clarin-dspace/clarin/dspace/config/crosswalks/DIM2MARC21slim.xsl
+#MODS-submission XSL https://raw.githubusercontent.com/ufal/clarin-dspace/clarin/dspace/config/crosswalks/mods-submission.xsl
+#DIM2DC-example XSL https://raw.githubusercontent.com/ufal/clarin-dspace/clarin/dspace/config/crosswalks/sample-crosswalk-DIM2DC.xsl
+# at this moment MSCR does not support crosswalk fetch via URI, so download first
+DIM2DataCite XSL ../Schema/UFAL-crosswalks/DIM2DataCite.xsl
+DIM2EZID XSL ../Schema/UFAL-crosswalks/DIM2EZID.xsl
+DIM2MARC21slim XSL ../Schema/UFAL-crosswalks/DIM2MARC21slim.xsl
+MODS-submission XSL ../Schema/UFAL-crosswalks/mods-submission.xsl
+DIM2DC-example XSL ../Schema/UFAL-crosswalks/sample-crosswalk-DIM2DC.xsl
 
