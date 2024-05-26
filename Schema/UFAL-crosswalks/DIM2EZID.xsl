@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-    Document   : DIM2DataCite.xsl
-    Created on : January 23, 2013, 1:26 PM
     Author     : pbecker, ffuerste
     Description: Converts metadata from DSpace Intermediat Format (DIM) into
                  metadata following the DataCite Schema for the Publication and
-                 Citation of Research Data, Version 2.2
+                 Citation of Research Data, Version 2.2, for use with EZID.
+                 Copied from DIM2DataCite.xsl, with small changes.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:dspace="http://www.dspace.org/xmlns/dspace/dim"
@@ -49,10 +48,9 @@
 
             <!-- 
                 DataCite (1)
-                Template Call for DOI identifier.
+                Dummy element for DOI identifier, which is not yet assigned.
             --> 
-            <xsl:apply-templates select="//dspace:field[@mdschema='dc' and @element='identifier' and starts-with(., 'http://dx.doi.org/')]" />
-
+                <identifier type='DOI'/>
             <!-- 
                 DataCite (2)
                 Add creator information. 
